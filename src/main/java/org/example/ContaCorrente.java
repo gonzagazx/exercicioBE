@@ -11,10 +11,6 @@ public class ContaCorrente extends ContaBancaria {
     }
 
 
-    public ContaCorrente(int numero, String titular) {
-        super(numero, titular);
-        this.limite = 0;
-    }
 
 
     public ContaCorrente(int numero, String titular, double limite) {
@@ -23,7 +19,7 @@ public class ContaCorrente extends ContaBancaria {
     }
 
     public double getLimite() {
-        return limite;
+        return limite + getSaldo() ;
     }
 
     public void setLimite(double limite) {
@@ -33,7 +29,7 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public boolean sacar(double valor) {
-        double disponivel = getSaldo() + this.limite;
+        double disponivel = getSaldo() + getLimite();
 
         if (valor > 0 && valor <= disponivel) {
             diminuirSaldo(valor);

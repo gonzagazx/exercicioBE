@@ -7,9 +7,7 @@ public class ContaBancaria {
 
 
     public ContaBancaria() {
-        this.numero = 0;
-        this.titular = "";
-        this.saldo = 0;
+  
     }
 
 
@@ -38,10 +36,10 @@ public class ContaBancaria {
 
 
     public double getSaldo() {
-        return saldo;
+        return saldo ;
     }
 
-    // ---------- Métodos protegidos para as subclasses alterarem o saldo ----------
+
 
 
     protected void aumentarSaldo(double valor) {
